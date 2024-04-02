@@ -40,7 +40,6 @@ async fn main() -> std::io::Result<()> {
             .app_data(web::Data::new(counter_addr.clone()))
             .service(get)
     })
-    .workers(50)
     .bind(("127.0.0.1", 8080))?
     .run()
     .await
